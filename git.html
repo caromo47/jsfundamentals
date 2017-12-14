@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hunting Github</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="name">
+			<button id="button">Click to view your name</button>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('#button').click(function(){
+						$.get("https://api.github.com/users/caromo47", displayName)
+					});
+					function displayName(data){
+						$('#displayName').append(`<h1>${data.name}</h1>`);
+					}
+
+				});
+			</script>
+			<div id="displayName">
+
+			</div>
+		</div>
+
+	</body>
+</html>
